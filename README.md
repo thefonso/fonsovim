@@ -47,7 +47,7 @@ information.
 
 ## Installation
 
-To install Fonsovim, please use our [automatic
+To install Fonsovim, please use the [automatic
 installer](https://github.com/thefonso/fonsovim/blob/master/bootstrap.sh)
 , which backs up any Vim files found in your home folder and installs
 Fonsovim.
@@ -98,30 +98,11 @@ NERDCommenter plug-in, you can do that with the command:
 $ echo "call fonsovim#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
-**WARNING**: We've noticed over and over, that people fork Fonsovim just to
-customize it. This is bad practice for several reasons and you should
-not do that, and here's why:
-
-- Fonsovim is fully customisable and there's no need to change the core for
-  using a different plugin fork or using a different mapping.
-- Forking means maintenance; maintenance means burden. Do not burden
-  yourself with maintaining a fork; that's what the `~/.fonsovim` folder
-  is for.
-
-If you find yourself needing a customisation that is not possible with
-the current setup, then please open an issue or consider submitting a
-pull request to make it possible to continue using/improving the official repo.
-
 **WARNING**: Any **uncommited** files inside the **fonsovim** folder will be
 removed the next time you run `rake` so make sure to either put them in
-the custom folder (`~/.fonsovim`), or commit them. We clean the fonsovim
-folder in case we replace a manually installed plugin (using rake tasks)
+the custom folder (`~/.fonsovim`), or commit them. I clean the fonsovim
+folder in case I replace a manually installed plugin (using rake tasks)
 with a submodule.
-
-For more information on how to customize Fonsovim, you might want to take
-a look at the [Customization wiki
-page](https://github.com/thefonso/fonsovim/wiki/Customization).
-Additional you can see [Example](https://github.com/khusnetdinov/.fonsovim) of customization.
 
 # Intro to VIM
 
