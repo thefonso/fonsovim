@@ -1,0 +1,43 @@
+""
+"" Fonsovim setup
+""
+
+" Define paths
+if has('win32') || has('win64') || has('win32unix')
+  let g:fonsovim_path = escape(expand("~/.vim/fonsovim/vim"), ' ')
+  let g:fonsovim_vim_path = escape(expand("~/.vim/fonsovim/vim"), ' ')
+else
+  let g:fonsovim_path = escape(fnamemodify(resolve(expand("<sfile>:p")), ":h"), ' ')
+  let g:fonsovim_vim_path = escape(fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h"), ' ')
+endif
+let g:fonsovim_custom_path = expand("~/.fonsovim")
+
+" Source fonsovim's core
+exe 'source ' . g:fonsovim_vim_path . '/core/before/plugin/fonsovim.vim'
+
+" You should note that groups will be processed by Pathogen in reverse
+" order they were added.
+call fonsovim#add_group("tools")
+call fonsovim#add_group("langs")
+call fonsovim#add_group("colors")
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+
+" Disable plugins prior to loading pathogen
+exe 'source ' . g:fonso_vim_path . '/core/plugins.vim'
+
+""
+"" Pathogen setup
+""
+
+" Load all groups, custom dir, and fonsovim core
+call fonsovim#load_pathogen()
+
+" .vimrc.after is loaded after the plugins have loaded
